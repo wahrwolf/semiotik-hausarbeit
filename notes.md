@@ -1,47 +1,76 @@
 # inhalt
 - vergleich zwischen shannon-weaver und peirce am beispiel eines gespräches
 
-# aufbau
-- zunächst beschreibung einer Kommunikation zwischen Alice und Bob
-- beschreibung in den worten von shannon-weaver
-- beschreibung in den worten von peirce
-- betrachung gemeinsamkeiten
-- betrachung unterschiede
+# Kommunikation nach Shannon-Weaver
+## Vorstellung des Modells/Grundsätze
+- Wie genau kann ein Symbol übertragen werden?
+	- Übertragung mittels Symbolen und Mustern, die auf einen Kanal gelegt werden
+- Wie genau kann ein Symbol verstanden werden?
+	- Kein Problem was technisch lösbar ist
+- Wie effektiv eine Nachricht sein?
+	- Einführung von H als Maß der Information
 
-# szenario:
-alice und bob leben in einer WG.
+## Modelbild
+- Sender
+- Sendegerät
+- Empfänger
+- Empfangsgerät
+- Kanal
+- Störung
 
-# ablauf
-## kommunikation von appellen (imperativen)
-- realität ist eine Menge von widerspruchsfreien axiomen
-- ein ereignis ist eine ausprägung einer eigenschaft als schlussfolgerung einer Menge an Axiomen
-- Eine Handlung beschreibt, das Auslösen eines Ereignisses durch einen Akteur
-- eine situation ist eine Menge an Eigenschaften und ihren Ausprägungen
-- eine Szene ist eine Menge an Situationen und eine Menge an Aktueren
-- ein Agent ist ein Akteuer, der versucht ein bestimte Ausprägung von Eigenschaften zu verwirklichen
-- Ein Konflikt beschreibt eine Situation und die Tupel aus Agent und ihren Zielen
-- Ein begrenzter Aktuer kann nur eine endliche Menge an Handlungen in einer Sitation ausführen
+## Ablauf
+- Der Sender übergibt eine Nachricht seinem Sendegerät
+- Das Sendegerägt erstellt aus der Nachricht ein Signal
+- Das Signal wird auf den Kanal übetragen
+- Die Störung verändert das Signal
+- Das Empfängsgerät empfägt ein Signal aus dem Kanal
+- Das Signal wird durch das Empfangsgerät in eine Nachricht umgewandelt
+- Der Empfänger empfängt die Nachricht
 
-### Kommunkation zweier Agenten nach Shannon-Weaver (interpretiert)
-#### Die Information
-- Im folgenden betachten wir nur begrenzte Akteuere
-1) Ein Agent nimmt die aktuelle Situation mittels receive(szene, situation): [symbol] und decode(symbol, szene): 
-2) Er bildet die Differenz zwischen seinem Ziel und der Sitation, als Menge von Handlungen
-3) Er stellt die Handlungsmöglichkeiten für alle involvierten Akteure da.
-4) Er bildet 2 Handlungsmengen: die er selbst erfüllen kann, und die er nicht selbsterfüllen kann
-Ab hier hat der Agent Alice eine Information, die sie kommunzieren möchte!
+# Kommunikation nach Peirce
+## Vorstellung des Modells/Grundsätze
+- triadische Relation
+	- Ein Objekt (signal)
+	- Repräsentamen (nachricht)
+	- Interpretant (information)
+- Arten von Zeichen
+	- Erstheit (seen)
+	- zweitheit (learned)
+	- drittheit (meta)
 
-#### Die Nachricht
-5) Alice bildet eine Codier-Funktion: encode(handlung, kanal, akteur) -> symbol, kanal
-6) Alice bildet eine Sende-Funktion: send(symbol, kanal) -> {Handlung}
+## Modelbild
+- Sender
+- Zeichn
+- Empfänger
 
-#### Das Signal
-7) Alice führt für jedes Elemnt in der zweiten Handlungsmenge; encode und send aus
-8) Alice überführt die aktuelle Sitation dadurch in eine neue Sitation
+## Ablauf
+- Der Sender erstellt ein Zeichen als Repräsant
+- Der Emfpänger interpretiert dieses Zeichen
 
-#### Wahrnehmung:
-9) repeat from the top
 
-### Verwendete Symbole
-- Die Codier- und Sendefuntkion ist situanstionsabhängig
-- 
+# Kommunkiationsmodell nach Shannon-Weaver-Peirce (Kodierer-Sender)
+## Vorstellung des Modells/Grundsätze
+- Level B können technisch gelöst werden
+- Kodierer/Dekodierer als peircsche Erweiterung
+	- Nachrichtenübertragung auf Baisis der Erstheit
+	- Challenge-Response auf Basis der Drittheit
+
+## Modelbild
+- Sender
+- Kodierer
+- Sendegerät
+- Empfangsgerät
+- Dekodierer
+- Empfänger
+
+
+## Ablauf
+- Der Sender übergibt eine Information seinem Kodierer
+- Der Kodierer erstellt daraus eine Nachricht
+- Das Sendegerägt erstellt aus der Nachricht ein Signal
+- Das Signal wird auf den Kanal übetragen
+- Die Störung verändert das Signal
+- Das Empfängsgerät empfägt ein Signal aus dem Kanal
+- Das Signal wird durch das Empfangsgerät in eine Nachricht umgewandelt
+- Die Nachricht wird durch den Dekodierer zu einer Information
+- Der Empfänger empfängt die Information
