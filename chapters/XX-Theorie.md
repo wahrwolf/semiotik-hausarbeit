@@ -9,6 +9,78 @@ Dafür sind die folgenden Schritte notwendig:
 * Aufteilung des Kodiervorgangs in die semantische Kodierung und die technische Kodierung
 * Definition und Abgrenzung eienr semantischen Störung von einer technischen Störung
 
+Das es gerade im Bereich der Semiotik und Kommunikationstheorie sehr viele verschiedene Definitionen gibt, definiere ich zunächst alle nötigen Grundbegriffe.
+
+## Definitionen
+### Grundlagen
+#### Axiom
+Ein Axiom sei eine atomare Aussage die zu einem finiten Zeitpunkt genau einen Wahrheitswert (wahr, falsch, unbekannt) haben kann.
+
+#### Theorem
+Eine aus mindestens einem Axiom nach dem boolschen Algebra abgeleitete Aussage.
+
+#### Information
+Eine Information sei eine Menge von Aussagen
+
+#### Axiomsystem
+Ein Axiomssystem sei ein Tupel aus einer Menge Variablen, einer Menge an Axiomen und einer Menge an Operationen zur Verknüpfung der Variablen
+
+#### Realität
+Eine Realität sein ein Axiomssystem mit folgenden Besonderheiten:
+* Die Menge der Variablen sei endlich
+* Die Operationen seien die der boolschen Algebra
+* Die Axiome seien nach der boolschen Algebra widerspruchsfrei
+
+#### Situation
+Eine Situation sei eine endliche Menge von deterministischen Aussagen, deren Wahrheitswerte ausschließlich wahr oder falsch sind.
+Wenn es für jede Aussage einer Situation ein Theorem gibt, dass dieses aus den Axiomen einer Realiät ableitet, so gelte die Situation in Bezug zu der Realiät als möglich.
+
+#### Kommunikationskanal
+Ein Kommunikationskanal oder kurz Kanal sei eine Realität in der mehr als eine Situation möglich sei.
+
+#### Signal
+Ein Signal sei ein Tupel aus einem Kommunikationskanal und einer Situation.
+
+#### Symobl
+Ein Symbol sei die Situation oder umgangssprachlicher der Zustand eines Signals.
+Wenn ein Sybmol in einem Signal enthalten ist, so gelte es als ausdrückbar durch das Signal.
+
+#### Nachricht
+Eine Nachricht sei eine Sequenz von Symbolen
+
+### Modelspezifisch
+#### technische Kodierung (Transformation)
+Eine technische Kodierung sei ein Paar aus den Funktionen prepare(s, C): S sowie revise(S): s mit s sei ein Symbol, C sei ein Kanal und S sein ein Signal
+Die Transformation sei also der Mechanismus der ein Symbol zu einem übertragbaren Signal vorbereitet und ebenso eine Möglichkeit bietet ein Symbol aus einem Signal zu lesen.
+Für alle Transformationen gelte: prepare(revise(S)) = S.
+Wenn revise(prepare(s, C)) = s gilt so sei die Transformation eindeutig.
+
+#### Sendegerät
+Ein Sendegerät sei ein Tupel aus einer technischen Kodierung und einer Funktion transmit(S_c, S_i): S mit S_c, S_i und S seien Signale, M eine Nachricht sowie send( M, S_c) mit:
+```
+def send(M, S_c):
+	for s in M:
+		S_c = transmit(S_c, prepare(s, S_c.C))
+	return S_c
+```
+Das Sendegerät sei also der Mechanismus mit dem ein Signal verändert wird um eine Nachricht zu verschicken.
+
+#### Empfangsgerät
+Ein Empfangsgerät sei einer Tupel aus einer technischen Kodierung und einer Funktion transceive(S_c): S_i sowie receive mit:
+```
+def receive(S_c):
+	S_i = transceive(S_c)
+	M = revise(S_i)
+	return M
+```
+Das Empfangsgerät sei der Mechanismus mit dem eine Nachricht aus einem Signal extrahiert wird.
+Ein Sende- und Empfangsgerät seien kompatibel wenn stets gilt receive(send(M, S_c)) = M.
+
+#### semantische Kodierung (Kodierung)
+Eine semantsiche Kodierung oder einfach nur Kodierung sei ein Paar aus den Funktionen encode(H): M und decode(M): H mit M sei eine Nachricht und H sei eine Information.
+Für alle Kodierungen gelte encode(decode(M)) = M
+Wenn decode(encode(H)) = H gilt so sei die Kodierung eindeutig.
+	
 ## Vorstellung des Modells/Grundsätze
 In dem bereits vorgestellten Modell von Shannon und Weaver hält der Sender eine Nachricht, die er mithilfe eines Sendegeräts verschicken möchte.
 
@@ -28,87 +100,6 @@ Das Ziel dieses Kodierungsschrittes ist es ein Axiom grundsätzlich abzubilden.
 Die semantische Kodierung ist eine Sprache, die 
 
 Die technische Kodierfunktion übersetzt eine Reihe von Symbolen in eine andere Reihe.
-
-
-- Level B können technisch gelöst werden
-- Kodierer/Dekodierer als peircsche Erweiterung
-	- Nachrichtenübertragung auf Baisis der Erstheit
-	- Challenge-Response auf Basis der Drittheit
-
-
-## Einführung des Kodierers
-### Verwendung von Zeichen der Zweitheit
-### Installation durch Zeichen der Erstheit
-### Kalibirierung durch Hashing mit Zeichen der Drittheit
-
-## Vorstellung des Gesamtmodells
-### Modelbild
-Wir erweitern das Modelbild des "Sender-Empfänger"-Models nach Shannon-Weaver um einen "Kodier Schritt".
-Daher erweitert sich das Modell auf folgende Begriffe:
-
-#### Kommunkationspartner
-Ein Kommunikationspartner K sei ein Tupel aus Empfangsgerät, Sendegerät, einer Menge an Kodiergeräten und einer Menge an Dekodiergeräten
-
-#### Information
-Die Information H sei ein endliches Tupel von Wahrheitswerten.
-Sie stellt die virtuell zu übermittelnde Information dar und ist eine Reihe von Axiomen.
-Eine Information ist einzigartig und hat nur eine Darstellungsweise.
-Als Beispiel kann man hier das Axiom "Die Tasse ist blau" nehmen.
-
-#### Nachricht
-Eine Nachricht M sei eine endliche Reihe von Symbolen.
-Sie stellt die formulierte und kontexbezogene Information da.
-Eine Information kann in mehrere Nachrichten formuliert werden.
-Gleichzeitig können aus einer Nachricht verschiedene Informationen extrahiert werden.
-Als Beispiel kann man hier einen Satz aus verschiedenen Worten nehmen.
-
-### Kanal
-Ein Kanal C sei eine endliche Matrix mit Symbolen aus der Menge R.
-Der Kanal stellt den physikalischen Raum dar, indem Sender und Empfänger kommunizieren.
-Als Beispiel kann man hier alle Moleküle in einem Raum nehmen.
-
-#### Signal
-Ein Signal S sei ein Vektor von Symbolen aus der Menge R 
-Es stellt die physikalische Darstellung einer Nachricht innerhalb eines Kanals da.
-Als Beispiel kann man hier einen Ton oder einen elektrischen Impuls nehmen.
-
-#### Emfpangsgerät
-Das Empfangsgerät sei ein Tupel aus den Funktionen receive(C): S und transform(S): M
-Hierbei wird zunächst ein Signal aus dem Kanal wahrgenommen und dann als eine Nachricht emfpangen.
-Die Funktionen sind stabil, aber unabhängig.
-So wird zwar aus dem gleichen Kanal stets das gleiche Signal wahrgenommen, und aus dem gleichen Signal stets die gleiche Nachricht empfangen, aber mehrere Signale können als die gleiche Nachricht empfangen werden.
-Ein perfekter Empfangsgerät transformiert K in S ohne Verluste.
-Ein Kommunikationspartner hat nur ein unveränderliches Empfangsgerät.
-Zu jedem Empfangsgerät kann man ein inverses Sendegerät definieren so, dass transform(receive(send(transform(M)))) = M
-Wenn dies gilt so sprechen wir von einem "kompatiblen" Sende- beziehungsweise Empfangsgerät.
-Als Beispiel kann man hier einen Lautsprecher oder die Muskeln eines Menschen nehmen.
-
-#### Sendegerät
-Das Sendegerät sei ein Tupel aus den Funktionen send(S, C_i): C_q und transform(M): S
-Die Funktionen sind stabil und erzeugen bei gleichem Kanal stets die gleiche Nachricht.
-Die Funktion transform stellt die Vorbereitung des Sendens da. Ein perfektes Sendegerät verändert den Kanal so, dass S enthalten ist.
-Ein Kommunikationspartner hat nur ein unveränderliches Sendegerät.
-Zu jedem transform eines sendegeräts exisitiert ein inverses transform eines emfpangsgeräts, so dass transform(transform(M)) = M
-Als Beispiel kann man hier Ohren, oder sogar die Kombination der Sinne (Hören, Sehen, Schmecken, Riechen, Fühlen, ...) nehmen.
-
-#### Kodiergerät
-Das Kodiergerät sei eine Funktion encode(H): M
-Die Funktion stellt da wie ein Kommunikationspartner eine Information als Nachricht formuliert.
-Ein Kodiergerät ist hierbei stets stabil und erzeugt aus einer Information stets die gleiche Nachricht.
-Mehrere Kodiergeräte können eine Informationen aber unterschiedlich darstellen.
-Das bedeutet auch, dass die Nachricht aus verschiedenen Informationen kodiert sein kann.
-Ein Kommunikationspartner hat eine endliche Menge an Kodiergeräten zur Verfügung.
-Als Beispiel kann man hier verschiedene Sprachen nehmen. Teekesselchen wie "Der Boxer berührt den Ring" verdeutlichen die Varianz.
-
-#### Dekodiergerät
-Das Dekodiergerät sein eine Funtkon decode(M): H
-Diese Funktion stellt dar, wie ein Kommunikationspartner eine Nachricht versteht.
-Ein Kodiergerät ist ebenfalls stabil und erzeugt aus einer Nachricht stets die gleiche Information.
-Es ist aber wieder möglich, dass mehrere Dekodiergeräte eine Nachricht unterschiedliche interpretieren.
-Zu jedem Dekodiergerät exisitert ein Kodiergerät, so dass decode(encode(H)) = H ist.
-Gilt dies so ist die Kodierung "nachvollziehbar".
-Ein Kommunikationspartner hat eine endliche Menge an Kodiergeräten zur Verfügung.
-Als Beispiel kann man hier verschiedene Sprachen nehmen. Teekesselchen wie "Der Boxer berührt den Ring" verdeutlichen die Varianz.
 
 
 #### Störung
