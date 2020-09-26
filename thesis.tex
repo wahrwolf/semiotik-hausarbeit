@@ -20,15 +20,16 @@
 % Languages:
 
 % Falls die Ausarbeitung in Deutsch erfolgt:
-% \usepackage[german]{babel}
-% \usepackage[T1]{fontenc}
+ \usepackage[german]{babel}
+ \usepackage[T1]{fontenc}
 % \usepackage[latin1]{inputenc}
 % \usepackage[latin9]{inputenc}                     
-% \selectlanguage{german}
+ \usepackage[utf8]{inputenc}                     
+ \selectlanguage{german}
 
 % If the thesis is written in English:
-\usepackage[english]{babel}                         
-\selectlanguage{english}
+% \usepackage[english]{babel}                         
+% \selectlanguage{english}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bind packages:
@@ -245,14 +246,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract:
-\section*{Abstract}\label{sec:abstract}
-%\fancyhead[LE,RO]{\it Abstract}
-%\addcontentsline{toc}{chapter}{\numberline{}Abstract}
-\input{"abstract-en.tex"}
-
-% If the abstract ist not longer than half a page, then the German Zusammenfassung can be places on the same page
-%\cleardoublepage
-\vfill
 \section*{Zusammenfassung}\label{sec:zusammenfassung}
 %\addcontentsline{toc}{chapter}{\numberline{}Zusammenfassung} %Add the Zusammenfassung to the TOC
 \input{"abstract-de.tex"}
