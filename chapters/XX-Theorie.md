@@ -14,37 +14,89 @@
 ## Vorstellung des Gesamtmodells
 ### Modelbild
 Wir erweitern das Modelbild des "Sender-Empfänger"-Models nach Shannon-Weaver um einen "Kodier Schritt".
-Daher erweitert sich das Modell um folgende Begriffe:
+Daher erweitert sich das Modell auf folgende Begriffe:
 
-Wie vorher auch exisitiert ein Sender und ein Empfänger als Kommunikationspartner.
-Der Sender verfügt über ein Kodiergerät zum erstellen einer Nachricht und ein Sendegerät um es auf einen Kanal zu senden.
+#### Kommunkationspartner
+Ein Kommunikationspartner K sei ein Tupel aus Empfangsgerät, Sendegerät, einer Menge an Kodiergeräten und einer Menge an Dekodiergeräten
 
-Der Kanal bezeichnet den Raum zwischenn Sender und Empfänger. Im einfachsten Fall handelt es sich z.B. um eine Leitung.
+#### Information
+Die Information H sei ein endliches Tupel von Wahrheitswerten.
+Sie stellt die virtuell zu übermittelnde Information dar und ist eine Reihe von Axiomen.
+Eine Information ist einzigartig und hat nur eine Darstellungsweise.
+Als Beispiel kann man hier das Axiom "Die Tasse ist blau" nehmen.
 
-Spiegelbildlich dazu hat der Empfänger ein Empfangsgerät und ein Dekodiergerät.
+#### Nachricht
+Eine Nachricht M sei eine endliche Reihe von Symbolen.
+Sie stellt die formulierte und kontexbezogene Information da.
+Eine Information kann in mehrere Nachrichten formuliert werden.
+Gleichzeitig können aus einer Nachricht verschiedene Informationen extrahiert werden.
+Als Beispiel kann man hier einen Satz aus verschiedenen Worten nehmen.
+
+### Kanal
+Ein Kanal C sei eine endliche Matrix mit Symbolen aus der Menge R.
+Der Kanal stellt den physikalischen Raum dar, indem Sender und Empfänger kommunizieren.
+Als Beispiel kann man hier alle Moleküle in einem Raum nehmen.
+
+#### Signal
+Ein Signal S sei ein Vektor von Symbolen aus der Menge R 
+Es stellt die physikalische Darstellung einer Nachricht innerhalb eines Kanals da.
+Als Beispiel kann man hier einen Ton oder einen elektrischen Impuls nehmen.
+
+#### Emfpangsgerät
+Das Empfangsgerät sei ein Tupel aus den Funktionen receive(C): S und transform(S): M
+Hierbei wird zunächst ein Signal aus dem Kanal wahrgenommen und dann als eine Nachricht emfpangen.
+Die Funktionen sind stabil, aber unabhängig.
+So wird zwar aus dem gleichen Kanal stets das gleiche Signal wahrgenommen, und aus dem gleichen Signal stets die gleiche Nachricht empfangen, aber mehrere Signale können als die gleiche Nachricht empfangen werden.
+Ein perfekter Empfangsgerät transformiert K in S ohne Verluste.
+Ein Kommunikationspartner hat nur ein unveränderliches Empfangsgerät.
+Zu jedem Empfangsgerät kann man ein inverses Sendegerät definieren so, dass transform(receive(send(transform(M)))) = M
+Wenn dies gilt so sprechen wir von einem "kompatiblen" Sende- beziehungsweise Empfangsgerät.
+Als Beispiel kann man hier einen Lautsprecher oder die Muskeln eines Menschen nehmen.
+
+#### Sendegerät
+Das Sendegerät sei ein Tupel aus den Funktionen send(S, C_i): C_q und transform(M): S
+Die Funktionen sind stabil und erzeugen bei gleichem Kanal stets die gleiche Nachricht.
+Die Funktion transform stellt die Vorbereitung des Sendens da. Ein perfektes Sendegerät verändert den Kanal so, dass S enthalten ist.
+Ein Kommunikationspartner hat nur ein unveränderliches Sendegerät.
+Zu jedem transform eines sendegeräts exisitiert ein inverses transform eines emfpangsgeräts, so dass transform(transform(M)) = M
+Als Beispiel kann man hier Ohren, oder sogar die Kombination der Sinne (Hören, Sehen, Schmecken, Riechen, Fühlen, ...) nehmen.
+
+#### Kodiergerät
+Das Kodiergerät sei eine Funktion encode(H): M
+Die Funktion stellt da wie ein Kommunikationspartner eine Information als Nachricht formuliert.
+Ein Kodiergerät ist hierbei stets stabil und erzeugt aus einer Information stets die gleiche Nachricht.
+Mehrere Kodiergeräte können eine Informationen aber unterschiedlich darstellen.
+Das bedeutet auch, dass die Nachricht aus verschiedenen Informationen kodiert sein kann.
+Ein Kommunikationspartner hat eine endliche Menge an Kodiergeräten zur Verfügung.
+Als Beispiel kann man hier verschiedene Sprachen nehmen. Teekesselchen wie "Der Boxer berührt den Ring" verdeutlichen die Varianz.
+
+#### Dekodiergerät
+Das Dekodiergerät sein eine Funtkon decode(M): H
+Diese Funktion stellt dar, wie ein Kommunikationspartner eine Nachricht versteht.
+Ein Kodiergerät ist ebenfalls stabil und erzeugt aus einer Nachricht stets die gleiche Information.
+Es ist aber wieder möglich, dass mehrere Dekodiergeräte eine Nachricht unterschiedliche interpretieren.
+Zu jedem Dekodiergerät exisitert ein Kodiergerät, so dass decode(encode(H)) = H ist.
+Gilt dies so ist die Kodierung "nachvollziehbar".
+Ein Kommunikationspartner hat eine endliche Menge an Kodiergeräten zur Verfügung.
+Als Beispiel kann man hier verschiedene Sprachen nehmen. Teekesselchen wie "Der Boxer berührt den Ring" verdeutlichen die Varianz.
+
+
+#### Störung
+Eine Störung ist vom Aufbau identisch wie ein Signal und wir auf den Kanal angelegt.
 
 
 ### Ablauf
-Im weiteren nennen wir den Sender Alice und den Empfänger Bob.
+Eine Kommunikation zwischen Sender und Empfänger läuft in dem Modell folgene Schritte ab:
 
-Eine Nachrichtenübertragung läuft dann nach folgendem Schema ab:
-Alice möchte eine Information an Bob übermitteln.
-Als erstes benutzt sie ihr Kodiergerät um die zu übermittelnde Information in eine Nachricht  umzuwandeln.
-Hierzu wählt sie ein Objekt, nach der Definition von Peirce aus, dessen Interpretant der zu übermittelnden Information entspricht.
-Diese Auswahl wird als "Kodieren" bezeichnet und ist abhängig von dem kulturellen Kontext von Alice.
+Der Sender möchte eine Information H_A übertagen.
+Diese Information wird durch das Kodiergerät zu einer Nachricht M_A.
+Das Sendegerät verändert den Kanal K durch den Signalvektor S_A.
 
-Im nächsten Schritt, dem "Senden" wird mithilfe des Sendegeräts durch eine physikalische Veränderung des Kanals ein Repräsentamen erzeugt.
+Das Emfpangsgerät extrahiert aus dem Kanal den Signalvektor S_B.
+Das Signal wird durch das Empfangsgerät zu der Nachricht M_B
 
-Nun kann der Kanal durch eine Störung physikalisch weiter verändert.
-
-Auf der Empfängerseite wird nun durch Wahrnehmung des aktuellen Zusatand des Kanals ein Objekt erstellt.
-Das Empfangsgerät definiert hierbei welche Dimensionen des Kanals interpretiert werden können.
-Der Eingangsvektor des Empfangsgerät ist ebenfalls ein Repräsentamen.
-
-Das Objekt wird im Dekodieren zu einem Interpretant abstrahiert.
-Dies passiert durch das Dekodiergerät, was sich durch den kulturellen Kontext von Bob definiert.
-Bob hat nun den interpretant empfangen.
-
+Im Dekodierschritt wird mithilfe des Dekodiergeräts die Nachricht zu einer Information H_B umbgewandelt.
+Diese Information kann schließlich durch den Emfpäger wahrgenommen werden.
 
 ### Störungen und Crosstalk
 #### Störungen
