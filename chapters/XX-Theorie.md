@@ -1,5 +1,35 @@
+# Theorie
 ## Level ist technisch lösbar
+Shannon und Weaver schlagen einen "Semantisches Empfangsgerät" vor, der die Nachricht im weiteren Schritt semantsich verarbeitet.
+
+Ich stelle im folgenden ein semantsiches Empfangs- beziehungsweise Sendegerät als Kodierer beziehungsweise Dekodierer vor.
+
+Dafür sind die folgenden Schritte notwendig:
+* Einführung einer allgemeinen Kodierfunktion
+* Aufteilung des Kodiervorgangs in die semantische Kodierung und die technische Kodierung
+* Definition und Abgrenzung eienr semantischen Störung von einer technischen Störung
+
 ## Vorstellung des Modells/Grundsätze
+In dem bereits vorgestellten Modell von Shannon und Weaver hält der Sender eine Nachricht, die er mithilfe eines Sendegeräts verschicken möchte.
+
+Hierbei wird das Senden in das Kodieren, als Umwandeln der Nachricht in zum Beispiel Morsecode und dann das eigentliche verschicken als physikalische Aktion unterteilt.
+
+In meinem Modell gehe ich noch einen Schritt weiter und setzte 3 Schritte an:
+Zunächst wird die Information in eine Nachricht kodiert.
+Anschließend wird die Nachricht zu einem Signal transformiert.
+Das eigentliche Senden ist dann die physikalische Veränderung des Kanals um das Signal darzustellen.
+
+Dieser Kodierschritt entspricht der semantischen Kodierung.
+Der Transformationsschritt entspricht der technischen Kodierung.
+
+Beide Kodierungen sind Funktionen die eine Reihe von Symbolen erzeugen.
+Die semantische Kodierfunktion nimmt aber eine Reihe von Axiomen und kodiert.
+Das Ziel dieses Kodierungsschrittes ist es ein Axiom grundsätzlich abzubilden.
+Die semantische Kodierung ist eine Sprache, die 
+
+Die technische Kodierfunktion übersetzt eine Reihe von Symbolen in eine andere Reihe.
+
+
 - Level B können technisch gelöst werden
 - Kodierer/Dekodierer als peircsche Erweiterung
 	- Nachrichtenübertragung auf Baisis der Erstheit
