@@ -3,18 +3,18 @@
 % Meta informations:
 \newcommand{\trauthor}{Vincent Dahmen}
 \newcommand{\trmatrikelnummer}{6689845}
-\newcommand{\trtype}{Bachelorthesis} %{Diplomarbeit} %{Dissertation}
-\newcommand{\trtitle}{Evaluation of prefix constraints and their impact on related and unrelated language pairs}
+\newcommand{\trtype}{Hausarbeit} %{Diplomarbeit} %{Dissertation}
+\newcommand{\trtitle}{Erweiterung des Shannon-Weaver Models um einen semantischen Kodierer}
 \newcommand{\tremail}{4dahmen@informatik.uni-hamburg.de}
-\newcommand{\trinstitute}{Dept. Informatik -- Knowledge Technology, WTM}
-\newcommand{\trwebsiteordate}{{https://www.informatik.uni-hamburg.de/WTM/}}
+\newcommand{\trinstitute}{Biologie}
+\newcommand{\trwebsiteordate}{{https://www.biologie.uni-hamburg.de/forschung/evolutionsbiologie/geschnatwiss.html}}
 \newcommand{\trdate}{\today}
 
 \newcommand{\trcourseofstudies}{Informatik} %{Bioinformatik} %{Intelligent Adaptive Systems} 
 \newcommand{\trauthordegree}{} %{\ B.Sc.}
-\newcommand{\trgutachterA}{\href{mailto:alpay@informatik.uni-hamburg.de}{M. Sc. Tayfun Alpay}}
-\newcommand{\trgutachterB}{\href{mailto:heinrich@informatik.uni-hamburg.de}{Dr. Stefan Heinrich}}
-\newcommand{\trfach}{Knowledge Technology, WTM}
+\newcommand{\trgutachterA}{\href{mailto:jshult47@gmail.com}{Prof. Dr. Joachim Schult}}
+%\newcommand{\trgutachterB}{\href{mailto:heinrich@informatik.uni-hamburg.de}{Dr. Stefan Heinrich}}
+\newcommand{\trfach}{Biologische Phänomene als Informatins- und Zeichenprozesse}
 \newcommand{\trkeywords}{Learning, Language, Demonstration}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Languages:
@@ -200,19 +200,19 @@
     \vspace{2.0cm}
     \begin{center}
       \textbf{\trtype}\\
-      %im Arbeitsbereich \trfach\\
-      at Research Group \trfach\\
+      im Arbeitsbereich \trfach\\
+      %at Research Group \trfach\\
       \trgutachterA\medskip\\
-      %Fachbereich Informatik\\
-      Department of Informatics\\
-      %MIN-Fakult\"at\\
-      MIN-Faculty\\
+      Fachbereich Informatik\\
+      %Department of Informatics\\
+      MIN-Fakult\"at\\
+      %MIN-Faculty\\
       Universit\"at Hamburg \\[1.0cm] %not allowed to translate Universit{\"a}t Hamburg
-      %vorgelegt von \\
-      submitted by \\
+      vorgelegt von \\
+      %submitted by \\
       \textbf{\href{mailto:\tremail}{\trauthor\trauthordegree}}\\
-      %Studiengang:   \trcourseofstudies \\
-      Course of study:   \trcourseofstudies \\
+      Studiengang:   \trcourseofstudies \\
+      %Course of study:   \trcourseofstudies \\
       Matrikelnr.:  \trmatrikelnummer \\
       %a\\
       on\\
@@ -221,9 +221,9 @@
     \vspace{2cm}
     \begin{center}
     \begin{tabular}{ll}
-    %Gutachter: & \trgutachterA \\
-    Examiners: & \trgutachterA \\
-                   & \trgutachterB \\
+    Gutachter: & \trgutachterA \\
+    %Examiners: & \trgutachterA \\
+    %               & \trgutachterB \\
     %Betreuung: & \trbetreuung \\    	% Adviser are not allowed to demand getting mentioned here, but are happy getting credited by student's initiative
     \end{tabular}
     \end{center}
@@ -244,14 +244,14 @@
 \hspace{1cm}
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Abstract:
-\section*{Zusammenfassung}\label{sec:zusammenfassung}
-%\addcontentsline{toc}{chapter}{\numberline{}Zusammenfassung} %Add the Zusammenfassung to the TOC
-\input{"abstract-de.tex"}
-\fancyhead[LE,RO]{\it Abstract}
-
-\cleardoublepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Abstract:
+%\section*{Zusammenfassung}\label{sec:zusammenfassung}
+%%\addcontentsline{toc}{chapter}{\numberline{}Zusammenfassung} %Add the Zusammenfassung to the TOC
+%\input{"abstract-de.tex"}
+%\fancyhead[LE,RO]{\it Abstract}
+%
+%\cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Lists:
@@ -288,25 +288,25 @@
     \bibliography{bib}
 \cleardoublepage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Formal page 1
-\vspace{2cm}
-\chapter*{Erkl\"arung der Urheberschaft}
-\label{sec:urheber}
-\fancyhead[LE]{\it Erkl\"arung der Urheberschaft}
-	Hiermit versichere ich an Eides statt, dass ich die vorliegende
-	\trtype{} im Studiengang \trcourseofstudies{}
-	selbstst{\"a}ndig verfasst und keine anderen als die angegebenen
-	Hilfsmittel - insbesondere keine im Quellenverzeichnis nicht
-	benannten Internet-Quellen – benutzt habe. Alle Stellen, die
-	w{\"o}rtlich oder sinngem{\"a}{\ss} aus Ver{\"o}ffentlichungen entnommen wurden,
-	sind als solche kenntlich gemacht. Ich versichere weiterhin, dass
-	ich die Arbeit vorher nicht in einem anderen Pr{\"u}fungsverfahren
-	eingereicht habe und die eingereichte schriftliche Fassung der
-	auf dem elektronischen Speichermedium entspricht.
-	
-\vspace{4cm}
-\noindent Ort, Datum \hfill Unterschrift
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Formal page 1
+%\vspace{2cm}
+%\chapter*{Erkl\"arung der Urheberschaft}
+%\label{sec:urheber}
+%\fancyhead[LE]{\it Erkl\"arung der Urheberschaft}
+%	Hiermit versichere ich an Eides statt, dass ich die vorliegende
+%	\trtype{} im Studiengang \trcourseofstudies{}
+%	selbstst{\"a}ndig verfasst und keine anderen als die angegebenen
+%	Hilfsmittel - insbesondere keine im Quellenverzeichnis nicht
+%	benannten Internet-Quellen – benutzt habe. Alle Stellen, die
+%	w{\"o}rtlich oder sinngem{\"a}{\ss} aus Ver{\"o}ffentlichungen entnommen wurden,
+%	sind als solche kenntlich gemacht. Ich versichere weiterhin, dass
+%	ich die Arbeit vorher nicht in einem anderen Pr{\"u}fungsverfahren
+%	eingereicht habe und die eingereichte schriftliche Fassung der
+%	auf dem elektronischen Speichermedium entspricht.
+%	
+%\vspace{4cm}
+%\noindent Ort, Datum \hfill Unterschrift
 
 %The backcover is always empty
 \newpage
@@ -314,22 +314,22 @@
 \hspace{1cm}
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Formal page 2
-\vspace{2cm}
-\chapter*{Erkl\"arung zur Ver\"offentlichung}
-\label{sec:urheber}
-\fancyhead[LE]{\it Erkl\"arung zur Ver\"offentlichung}
-Ich stimme der Einstellung der \trtype{} in die Bibliothek des Fachbereichs Informatik zu.
-
-\vspace{4cm}
-\noindent Ort, Datum \hfill Unterschrift
-
-%The backcover is always empty
-\newpage
-\thispagestyle{empty}
-\hspace{1cm}
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Formal page 2
+%\vspace{2cm}
+%\chapter*{Erkl\"arung zur Ver\"offentlichung}
+%\label{sec:urheber}
+%\fancyhead[LE]{\it Erkl\"arung zur Ver\"offentlichung}
+%Ich stimme der Einstellung der \trtype{} in die Bibliothek des Fachbereichs Informatik zu.
+%
+%\vspace{4cm}
+%\noindent Ort, Datum \hfill Unterschrift
+%
+%%The backcover is always empty
+%\newpage
+%\thispagestyle{empty}
+%\hspace{1cm}
+%\newpage
 
 \end{document}
 %EOF
