@@ -44,7 +44,7 @@ Ein Kommunikationskanal oder kurz Kanal sei eine Realität in der mehr als eine 
 Ein Signal sei ein Tupel aus einem Kommunikationskanal und einer Situation.
 
 ### Symobl
-Ein Symbol sei die Situation oder umgangssprachlicher der Zustand eines Signals.
+Ein Symbol sei die Situation oder auch das Erscheinungsbild eines Signals.
 Wenn ein Sybmol in einem Signal enthalten ist, so gelte es als ausdrückbar durch das Signal.
 
 ### Nachricht
@@ -78,12 +78,72 @@ def receive(S_c):
 Das Empfangsgerät sei der Mechanismus mit dem eine Nachricht aus einem Signal extrahiert wird.
 Ein Sende- und Empfangsgerät seien kompatibel wenn stets gilt $receive(send(M, S_c)) = M$.
 
-### semantische Kodierung (Kodierung)
+
+
+
+# Einführung des Kodierers
+Die obigen Defintion eines Symbols beziehungsweise eine Signales lassen sich auch nach der triadischen Relation nach Peirce ausdrücken.
+Nach dem Modell von \cite{Shannon:62} würde gelten:
+
+- Das Signal entspricht dem Repräsntamen.
+- Das Symbol entspricht dem Objekt
+- Die Nachricht entspricht dem Interpretant
+
+Nach dem infitinen semiotischen Regress gilt damit:
+
+- Das Symbol entspricht dem Repräsntamen.
+- Die Nachricht entspricht dem Objekt
+- Die Information entspricht dem Interpretant
+
+Bis wir im nächsten Schritt an den Abbruch kommen:
+
+- Die Nachricht entspricht dem Repräsntamen.
+- Die Information entspricht dem Objekt
+- Die Information ist durch die Axiomisierung die "ultimate Opinion" nach \cite{Nagl:91}
+
+Nun können wir die 3 Schritte bennen und bereits bekannten Definitionen zuordnen
+
+- Übertragung
+   - Das Signal entspricht dem Repräsntamen.
+   - Das Symbol entspricht dem Objekt
+   - Die Nachricht entspricht dem Interpretant
+
+- technische Kodierung (Transformation)
+   - Das Symbol entspricht dem Repräsntamen.
+   - Die Nachricht entspricht dem Objekt
+   - Die Information entspricht dem Interpretant
+
+
+Für die Übertragung und die Transformation passen die Defintionen für Sende- und Empfangsgerät schon.
+Für die Kodierung brauchen wir also eine Funktion die Information in Nachrichten kodiert.
+
 Eine semantsiche Kodierung oder einfach nur Kodierung sei ein Paar aus den Funktionen $encode(H): M$ und $decode(M): H$ mit $M$ sei eine Nachricht und H sei eine Information.
 Für alle Kodierungen gelte $encode(decode(M)) = M$
 Wenn $decode(encode(H)) = H$ gilt so sei die Kodierung eindeutig.
-	
-# Vorstellung des Modells/Grundsätze
+
+Somit kann der letzte Schritt auch benannt werden:
+
+- semantsiche Kodierung (Kodierung)
+   - Die Nachricht entspricht dem Repräsntamen.
+   - Die Information entspricht dem Objekt
+   - Die Information ist durch die Axiomisierung die "ultimate Opinion" nach \cite{Nagl:91}
+
+Die so definierten Schritte lassen sich auch als Phasen einer Kommunikation begreifen.
+
+# Ablauf
+Eine Kommunikation zwischen Sender und Empfänger läuft in dem Modell folgene Schritte ab:
+
+1) Der Sender möchte eine Information $H_A$ übertagen.
+2) Diese Information wird durch das Kodiergerät zu einer Nachricht $M_A$.
+3) Die Nachricht wird zu dem Sginal $S_{A}^{K}$
+4) Das Sendegerät verändert das Signal $S_{0}^{K}$ des Kanal $K$ zu dem Signal $S_{A'}^{K}$.
+5) Eine Störung verändert das Signal zu $S_{\omega}^{K}$
+6) Das Emfpangsgerät extrahiert aus dem Kanal das Signal $S_{B}^{K}$.
+7) Das Signal wird durch das Empfangsgerät zu der Nachricht $M_B$.
+8) Im Dekodierschritt wird mithilfe des Dekodiergeräts die Nachricht zu einer Information $H_B$ umbgewandelt.
+9) Diese Information kann schließlich durch den Emfpäger wahrgenommen werden.
+
+# Erläuterung und Vertiefung des Models
 In dem bereits vorgestellten Modell von Shannon und Weaver hält der Sender eine Information, die er mithilfe eines Sendegeräts verschicken möchte.
 
 Hierbei wird das Senden in das Kodieren, als Umwandeln der Nachricht in zum Beispiel Morsecode und dann das eigentliche verschicken als physikalische Aktion unterteilt.
@@ -118,23 +178,6 @@ Um bei dem Beispiel des Musikers zu bleiben, muss ein Fan im Publikum zunächst 
 Die Geräusche müssen dann zunächst als Worte erkannt (Transformation) und anschließend als Beschreibungen (Kodierungen) verstanden werden.
 Die Menge der wahrgenommen physikalischen Signale ist abhängig von der Emfpangsfähigkeit des Empfängers.
 Seiteneffekte oder Störungen können das wahrgenommene Signal die emfpangene Nachricht für unterschiedliche Emfpänger drastisch beeinflussen.
-
-## Ablauf
-Eine Kommunikation zwischen Sender und Empfänger läuft in dem Modell folgene Schritte ab:
-
-1) Der Sender möchte eine Information $H_A$ übertagen.
-2) Diese Information wird durch das Kodiergerät zu einer Nachricht $M_A$.
-3) Die Nachricht wird zu dem Sginal $S_{A}^{K}$
-4) Das Sendegerät verändert das Signal $S_{0}^{K}$ des Kanal $K$ zu dem Signal $S_{A'}^{K}$.
-5) Eine Störung verändert das Signal zu $S_{\omega}^{K}$
-6) Das Emfpangsgerät extrahiert aus dem Kanal das Signal $S_{B}^{K}$.
-7) Das Signal wird durch das Empfangsgerät zu der Nachricht $M_B$.
-8) Im Dekodierschritt wird mithilfe des Dekodiergeräts die Nachricht zu einer Information $H_B$ umbgewandelt.
-9) Diese Information kann schließlich durch den Emfpäger wahrgenommen werden.
-
-## Störungen und Crosstalk
-### Störungen
-Die Kommunikation kann an mehrern Stellen gestört werden.
 
 #### Kodierung
 Wenn sich die sozialen Kontexte von Sender und Empfänger zu stark unterscheiden, ist der Kodier-Dekodier Prozess gestört.
