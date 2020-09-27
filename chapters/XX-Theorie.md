@@ -78,6 +78,10 @@ def receive(S_c):
 Das Empfangsgerät sei der Mechanismus mit dem eine Nachricht aus einem Signal extrahiert wird.
 Ein Sende- und Empfangsgerät seien kompatibel wenn stets gilt $receive(send(M, S_c)) = M$.
 
+### semantische Kodierung (Kodierung)
+Eine semantsiche Kodierung oder einfach nur Kodierung sei ein Paar aus den Funktionen $encode(H): M$ und $decode(M): H$ mit $M$ sei eine Nachricht und H sei eine Information.
+Für alle Kodierungen gelte $encode(decode(M)) = M$
+Wenn $decode(encode(H)) = H$ gilt so sei die Kodierung eindeutig.
 
 
 
@@ -85,6 +89,7 @@ Ein Sende- und Empfangsgerät seien kompatibel wenn stets gilt $receive(send(M, 
 Die obigen Defintion eines Symbols beziehungsweise eine Signales lassen sich auch nach der triadischen Relation nach Peirce ausdrücken.
 Nach dem Modell von \cite{Shannon:62} würde gelten:
 
+## triadische Relation des Sender-Emfpänger Models
 - Das Signal entspricht dem Repräsntamen.
 - Das Symbol entspricht dem Objekt
 - Die Nachricht entspricht dem Interpretant
@@ -103,6 +108,10 @@ Bis wir im nächsten Schritt an den Abbruch kommen:
 
 Nun können wir die 3 Schritte bennen und bereits bekannten Definitionen zuordnen
 
+## Phasen der Kommunikation
+Für die Übertragung und die Transformation passen die Defintionen für Sende- und Empfangsgerät schon.
+Für die Kodierung können wir die Definition \autoref{semantsiche-kodierung-kodierung} heranziehen.
+
 - Übertragung
    - Das Signal entspricht dem Repräsntamen.
    - Das Symbol entspricht dem Objekt
@@ -113,25 +122,16 @@ Nun können wir die 3 Schritte bennen und bereits bekannten Definitionen zuordne
    - Die Nachricht entspricht dem Objekt
    - Die Information entspricht dem Interpretant
 
-
-Für die Übertragung und die Transformation passen die Defintionen für Sende- und Empfangsgerät schon.
-Für die Kodierung brauchen wir also eine Funktion die Information in Nachrichten kodiert.
-
-Eine semantsiche Kodierung oder einfach nur Kodierung sei ein Paar aus den Funktionen $encode(H): M$ und $decode(M): H$ mit $M$ sei eine Nachricht und H sei eine Information.
-Für alle Kodierungen gelte $encode(decode(M)) = M$
-Wenn $decode(encode(H)) = H$ gilt so sei die Kodierung eindeutig.
-
-Somit kann der letzte Schritt auch benannt werden:
-
 - semantsiche Kodierung (Kodierung)
    - Die Nachricht entspricht dem Repräsntamen.
    - Die Information entspricht dem Objekt
    - Die Information ist durch die Axiomisierung die "ultimate Opinion" nach \cite{Nagl:91}
 
+
 Die so definierten Schritte lassen sich auch als Phasen einer Kommunikation begreifen.
 
 # Ablauf
-Eine Kommunikation zwischen Sender und Empfänger läuft in dem Modell folgene Schritte ab:
+Eine Kommunikation zwischen Sender und Empfänger läuft nach durch folgende Schritte:
 
 1) Der Sender möchte eine Information $H_A$ übertagen.
 2) Diese Information wird durch das Kodiergerät zu einer Nachricht $M_A$.
@@ -179,22 +179,3 @@ Die Geräusche müssen dann zunächst als Worte erkannt (Transformation) und ans
 Die Menge der wahrgenommen physikalischen Signale ist abhängig von der Emfpangsfähigkeit des Empfängers.
 Seiteneffekte oder Störungen können das wahrgenommene Signal die emfpangene Nachricht für unterschiedliche Emfpänger drastisch beeinflussen.
 
-#### Kodierung
-Wenn sich die sozialen Kontexte von Sender und Empfänger zu stark unterscheiden, ist der Kodier-Dekodier Prozess gestört.
-Das kommt insbesonders dann zustande, wenn zum Beispiel ein Objekt als Zeichen der Zeitheit durch Bob, aber als Zeichen der Drittheit für Alice geprägt sind.
-
-Je mehr gemeinsame Erfahrungen und kulturellen Kontext Alice und Bob gemeinsam haben, desto eindeutiger kann die Kodierung erfolgen.
-Technisch gesehen sprechen wir hier von Symboltabellen wie z.B. Morsezeichen.
-Wenn die Kommunkationspartner aufeinander abgestimmt sind, dann können immer kompaktere und effizientere Kodierungen benutzt werden.
-
-#### Senden
-Der Sendeprozess ist die Art wie ein Objet zu einem Repräsantamen wird.
-Hierbei stellt das Sendegerät die Möglichkeiten zur Veränderung des Kanals da.
-Aus Sicht der Informationstheorie ist das Sendegerät eine Funktion, die einen Nachrichtenvektor und eine Kanalmatrix zu einer resultierenden Kanalmatrix verarbeitet.
-Die Kanalmatrix kann nur mithilfe eines Emfpangsgerät wahrgenommen werden.
-Daher ist der aktuellen Zustand und damit der eingeschränkte Zustandsraum für den Sender nicht einsehbar.
-Das bedeutet, dass der Sender auch Nachrichtenvektoren übergeben kann, die den Kanal effektiv nicht verändern.
-
-#### Empfangen
-Beim Empfangen wird aus einer Kanalmatrix durch eine Funktion ein Nachrichtenvektor erstellt.
-Die Kanalmatrix kann zusätliche und andere Dimensionen hab
