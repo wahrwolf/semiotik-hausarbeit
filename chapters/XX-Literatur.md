@@ -44,4 +44,34 @@ Aufbauend auf dem semantischen Problem sehen Shannon und Weaver große Schwierig
 Da Kommunikation sehr viele unterschiedliche Aktionen hervorrufen kann, sei es schwierig Erfolg allgemein zu quantifizieren.
 
 # Peirce
-Charles Sanders Peirce stellt in seinen Werken der Semiotik insbesondere in der Kategorienlehre
+Charles Sanders Peirce prägte die Semiotik insbesondere durch die Einführung der Kateogrienlehre und der triadischen Zeichenbedeutung.
+
+## triadische Zeichendeutung
+In der Semiotik nach \cite{Peirce:02} besteht ein Gegenstand aus 3 Teilen, die ihn als Zeichen definieren.
+
+### Objekt
+Das Objekt bezeichnet das Bezugsobjekt. Dies entspricht der Identität des Gegenstands, nicht aber deren Aussehen.
+
+### Repräsentamem
+Der Repräsentamen bezeichnet die äußere Gestalt des Zeichens. Hiermit ist die Wahrnehmung oder das Aussehen des Gegenstands gemeint.
+
+### Interpretant
+Der Interpretant bezeichnet die innere Bedeutung des Gegenstands. Der Interpretant ist die Wirkung die ein Repräsentamen beim einwirken uaf einen Interpretant verursacht. Andere Übersetzungen nehmen hier die "Bedeutung" oder den Inhalt des Zeichens an.
+
+In einem Beispiel eines Apfels auf einem Tisch gelten folgende Beziehungen:
+
+- der Apfel als solcher ist ein Objekt. Der Apfel ist als Objekt einzigartig. Es mag andere Äpfel geben, aber als Objekt gesehen ist er einzigartig. Wenn jemand dazu augefordert werden würde den Apfel zu bewegen, so würde das Objekt gemeint sein und kein anderer Apfel
+- das Bild des Apfels als physikalische Reize stellen das Repräsentamen dar. Jede Beschreibung oder Wahrnehmung des Apfels in Form, Farbe, Geschmack bezieht sich ausschließlich auf das Repräsentamen. 
+- Die Unterscheidung des Apfels von der Umwelt sowie das Verständnis über die Möglichkeiten der Interaktion mit dem Apfel sowie das Wissen über mögliche Eigenschaft die aus dem Repräsentamen wahrgenommen werden können sind das Interpretant. Das Wissen darüber das und wie der Apfel bewegt werden schließen dies ein.
+
+
+
+## infiter semiotischer Regress
+Die Wahrnehmung eines jeden möglichen Gegenstands führt stets zu einer Aufteilung in Objekt, Interpretant und Repräsentamen.
+Das bedeutet aber, dass der Interpretant eines Objekts direkt wieder zu einem Repräsentamen wird.
+
+Wird ein Apfel beobachtet, dann werden die wahrgenommen Eigenschaften (zum Beispiel die Kombination aus Farbe und Form) eine anderes Repräsentamen des Apfels.
+Form und Farbe sind ausreichend um den Apfel zu erkennen.
+Im nächsten Schritt kann eine reduzierte oder veränderte wahrnehumung (zum Beispiel Kreis mit Biss) als Repräsentemn von Form und Farbe werden.
+Dieser Prozess ist theoretisch endlich tief.
+Nach \cite{Noeth85} wird dieser aber ab einer frühen Stufe abgebrochen.
