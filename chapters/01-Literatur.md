@@ -1,70 +1,98 @@
 \chapter{Literatur}
+Ich stelle zunächst das Sender-Empfänger Modell aus der Informatik vor und anschließend das Korrelate Modell aus der Semiotik.
+Bei beiden Modellen gehe ich außerdem kurz auf die aus dem Modell resultierenden Schlussfolgerungen und Fragestellungen ein.
+
 # Shannon-Weaver
 In der Kommunikationstheorie gilt das "Sender-Emfpänger" Modell von  \cite{Shannon:62} als die Grundlage der technischen Kommunikation.
-Es veranschaulicht die grundlgenden Probleme bei der Kommunikation und führt erstmals Bit als Maßeinheit für Information ein.
+Es veranschaulicht die grundlegenden Probleme bei der Kommunikation und führt erstmals das Bit als Maßeinheit für Information ein.
 
-## Beschreibung des Models
-### Ablauf einer Kommunikation
+## Sender-Emfpänger Modell
+### Beschreibung des Models
+Die Kommunikation findet stets zwischen zwei Empfängern statt, zwischen denen eine Nachricht übertragen wird.
+Dieser Vorgang kann dann beliebig oft wiederholt werden.
+
+Der Sender hat ein Sendegerät mit dem eine Nachricht verschicken werden kann.
+Der Empfänger hat ein Empfangsgerät, mit dem eine Nachricht empfangen werden kann.
+Zwischen dem Sender und dem Empfänger liegt ein sogenannter Kommunikationskanal oder kurz Kanal.
+Das Sende- und das Empfangsgerät sind mit dem Kanal verbunden.
+
+#### Ablauf einer Kommunikation
 Wie in Abbildung \TODO{Bild einfügen} dargestellt modellieren \cite{Shannon:62} Kommunkation wie folgt:
-Ein Sender (Information Source) wählt eine Nachricht aus einer Menge von möglichen Nachrichten aus.
 
-Mithilfe eines Sendegeräts wandelt er die Nachricht in ein Signal um, dass über einen Kommunikationskanal zu einem Emfpangsgerät gesendet wird.
+1) Ein Sender (Information Source) wählt eine Nachricht aus einer Menge von möglichen Nachrichten aus.
+2) Die Nachricht wird mit dem Sendegerät (Transmitter) an den Kanal geschickt
+3) Auf dem Kanal verändert ein Rauschen die Nachricht
+4) Das Signal und das Rauschen werden mit dem Empfangsgerät als Nachricht emfpangen
+5) Der Empfänger verarbeitet die Nachricht weiter
 
-Das Empfangsgerät wandelt das Signal wieder in eine Nachricht, die von dem Empfänger verarbeitet werden kann.
-
-### Auftreten einer Störung
-Während der Übertragung kann der Kommunikationskanal durch ein Rauschen gestört werden.
+#### Auftreten einer Störung
+Während der Übertragung kann der Kommunikationskanal durch ein Rauschen gestört werden (Schritt 3).
 Dies verändert das übertragene Signal und kann somit verhindern, dass eine Nachricht korrekt übertragen wird.
 
-## Information und Entropie
-In ihrer Arbeit erläutern \cite{Shannon:62} außerdem die Beziehung zwischen Bedeutung und Information einer Nachricht ein.
+## Unterscheidung von Information und Bedeutung
+In ihrer Arbeit erläutern \cite{Shannon:62} außerdem die Beziehung zwischen Bedeutung und Information einer Nachricht.
 So ist in ihrer Definition die Information die Anzahl der Ausdrucksmöglichkeiten die eine Nachricht annehmen kann.
-Die Entropie entspricht der Reduktion der Unsicherheit durch den Erhalt einer Nachricht.
+Kann eine Nachricht zum Beispiel nur zwei Symbole annehmen hat diese Nachricht einen Informationsgehalt von 1 Bit.
 
-Eine Nachricht hat also eine Information die in Bit gemessen wird und die Größe der Nachricht darstellt.
-Die Kommunikation ist demnach der Prozess der Entropiereduktion einer Nachricht eines Senders zu einem Empfänger bis sich die Entropie der Nachricht durch das Empfangen weiterer Symbole nicht mehr verändert.
+Die Bedeutung bezieht sich auf den Inhalt der Nachricht.
+Der Informationsgehalt einer Nachricht ist somit zunächst unabhängig von ihrer Bedeutung.
+\cite{Shannon:62} beziehen hier den Empfänger mit ein um die Bedeutung quantifizieren zu können.
+Der Empfänger hat eine Unsicherheit über den Inhalt der Nachricht, die mit jedem empfangen Signal reduziert wird.
+Der Grad der Unsicherheitsreduktion für ein Signal ist abhängig von der Anzahl und der Wahrscheinlichkeitsverteilung der Symbole.
+
+Diese Unsicherheit über den Inhalt der Nachricht wird auch als Entropie der Nachricht bezeichnet.
+
+Demnach ist Kommunikation der Prozess der Entropiereduktion einer Nachricht, indem ein Sender Signale  zu einem Empfänger schickt.
+Die Kommunikation ist abgeschlossen, wenn die Entropie der Nachricht durch das Empfangen weiterer Symbole nicht mehr verändert wird.
 
 ## Probleme der Kommunikation
+Auf Basis des Sender-Empfänger Modells und der Unterscheidung von Information und Bedeutung unterscheiden \cite{Shannon:62} folgende Level der Kommunikationsprobleme.
+
 ### Level A: The technical problem
-Als technisches Problem definieren \cite{Shannon:62} die Frage: Wie präzise können Symbole einer Kommunikation übertragen werden?
-Mithilfe der obigen Definition der Information lässt sich zeigen, dass die Übertragung abhängig von dem Kanal und der verwendeten  Kodierung ist.
-Für eine Menge aus Symbolen lässt sich die Kommunikation in Abhängikeit von der Wahrscheinlichkeitsverteilung der erwarteten Ereignisse optimieren.
+Als technisches Problem definieren \cite{Shannon:62}: Wie präzise können Signale bei einer Kommunikation übertragen werden?
+Dieses Level beinhaltet das Optimierungsproblem der Signalübertragung sowie Probleme bei der Verarbeitung von gestörten Signalen.
+Zu dem technischen Problem stellen die Autoren verschiedene Lösungen vor.
 
 ### Level B: The semantic problem
-Das semantische Problem fragt: Wie präzise können übertragene Symbole die gewünschte Bedeutung vermitteln?
-Diese Frage ist laut \cite{Shannon:62} von der Lösung des technischen Problems stark abhängig, aber zunächst nicht allgemein lösbar.
-Dies gilt insbesondere da eine Störung in der Semantik die Kommunikation und die Diagnose des Fehlers komplett verhindert.
-\cite{Shannon:62} sehen hier allerdings kein kein praktisches Problem.
-In einer Konversation gäbe es selbst bei komplett verschiedenen Sprachen schon nach einigen Sätzen eine Konsens über die Wörter "ja" und "Nein". 
-Um das Problem genauer zu untersuchen schlagen \cite{Shannon:62} die Verwendung eines "semantischen Kodierers" vor, deren Implementation sie aber offen lassen.
+Als sematnsichen Problemen definieren \cite{Shannon:62}: Wie präzise können übertragene Signale die gewünschte Bedeutung vermitteln?
+Dieses Level enthält alle Probleme die beim Empfänger nach der Übermittlung des Signals entstehen, wie das Entscheidungsproblem Authenzität oder Korrektheit einer Nachricht oder die Verarbeitung von unbekannten Sprachen.
+
+Das semantsiche Problem ist laut \cite{Shannon:62} abhängig von dem darunterliegenden technischen Problem und zunächst nicht allein technisch lösbar.
 
 ### Level C: The effectiveness problem
-Das dritte Problem fragt: Wie effizient führt die übertragene Bedeutung zu einer gewünschten Aktion?
-Aufbauend auf dem semantischen Problem sehen Shannon und Weaver große Schwierigkeiten bei dem Verhältnis zwischen empfangene Bedeutung und gewünschter Aktion.
-Da Kommunikation sehr viele unterschiedliche Aktionen hervorrufen kann, sei es schwierig Erfolg allgemein zu quantifizieren.
+Als Effizienzproblem definieren \cite{Shannon:62}: Wie effizient führt eine Übertragung zu einer Aktion?
+Dies umfasst verschiedene Optimierungsprobleme sowie ein Quantifierzungsproblem von Erfolg.
+Laut den Autoren ist dieses Level nur in Abhängigkeit der anderen beiden Level lösbar.
 
 # Peirce
-Charles Sanders Peirce prägte die Semiotik insbesondere durch die Einführung der Kateogrienlehre und der triadischen Zeichenbedeutung.
+In der Semiotik gilt Peirce als einer der prägenden Wissenschaftler.
+Sein Modell der Korrelate sowie die Betrachtung der Wahrnehmung als infiter semiotischer Regress sind die Grundlage der aktuellen Forschung
 
-## triadische Zeichendeutung
-In der Semiotik nach \cite{Peirce:02} besteht ein Gegenstand aus 3 Teilen, die ihn als Zeichen definieren.
+## Korrelate Modell
+Als Korrelate Modell oder auch triadische Zeichendeutung beschreibt \cite{Peirce:XX} die Beziehung zwischen den Bedeutungsebenen von Symbolen.
+Demnach hat jeder Gegenstand drei verschiedene Bedeutungsebenen, die ihn definieren.
 
 ### Objekt
-Das Objekt bezeichnet das Bezugsobjekt. Dies entspricht der Identität des Gegenstands, nicht aber deren Aussehen.
+Das Objekt bezeichnet das die Bezugsebene des Gegenstands.
+Es steht für das Individuum oder die Identität des Gegenstands.
+Jeder Gegenstand ist ein einzigartiges Objekt.
 
 ### Repräsentamem
-Der Repräsentamen bezeichnet die äußere Gestalt des Zeichens. Hiermit ist die Wahrnehmung oder das Aussehen des Gegenstands gemeint.
+Der Repräsentamen bezeichnet die Wahrnehmungsebene des Gegenstands.
+Er steht für das Aussehen oder die äußere Gestalt des Gegenstands.
+Mehrere Gegenstände können ein gleiches Repräsentamen haben.
 
 ### Interpretant
-Der Interpretant bezeichnet die innere Bedeutung des Gegenstands. Der Interpretant ist die Wirkung die ein Repräsentamen beim einwirken uaf einen Interpretant verursacht. Andere Übersetzungen nehmen hier die "Bedeutung" oder den Inhalt des Zeichens an.
+Der Interpretant bezeichnet für die Botschaftfsebene des Gegenstands.
+Er steht für die Bedeutung oder die Wirkung des Gegenstands.
+Mehre Gegenstände können einen und ein Gegenstand kann mehrere Interpretanten haben.
 
+### Beispiel
 In einem Beispiel eines Apfels auf einem Tisch gelten folgende Beziehungen:
 
-- der Apfel als solcher ist ein Objekt. Der Apfel ist als Objekt einzigartig. Es mag andere Äpfel geben, aber als Objekt gesehen ist er einzigartig. Wenn jemand dazu augefordert werden würde den Apfel zu bewegen, so würde das Objekt gemeint sein und kein anderer Apfel
+- dieser Apfel als Objekt einzigartig.  Wenn jemand dazu aufgefordert werden würde den Apfel zu bewegen, so wäre das Objekt eindeutig und kein anderer Apfel gemeint.
 - das Bild des Apfels als physikalische Reize stellen das Repräsentamen dar. Jede Beschreibung oder Wahrnehmung des Apfels in Form, Farbe, Geschmack bezieht sich ausschließlich auf das Repräsentamen. 
-- Die Unterscheidung des Apfels von der Umwelt sowie das Verständnis über die Möglichkeiten der Interaktion mit dem Apfel sowie das Wissen über mögliche Eigenschaft die aus dem Repräsentamen wahrgenommen werden können sind das Interpretant. Das Wissen darüber das und wie der Apfel bewegt werden schließen dies ein.
-
-
+- Die Unterscheidung des Apfels von der Umwelt sowie das Verständnis über die Möglichkeiten der Interaktion mit dem Apfel sind das Interpretant. Über das Repräsentamen ist bekannt, dass der Apfel eine Frucht ist, die man essen kann.
 
 ## infiter semiotischer Regress
 Die Wahrnehmung eines jeden möglichen Gegenstands führt stets zu einer Aufteilung in Objekt, Interpretant und Repräsentamen.
@@ -75,3 +103,14 @@ Form und Farbe sind ausreichend um den Apfel zu erkennen.
 Im nächsten Schritt kann eine reduzierte oder veränderte wahrnehumung (zum Beispiel Kreis mit Biss) als Repräsentemn von Form und Farbe werden.
 Dieser Prozess ist theoretisch endlich tief.
 Nach \cite{Noeth85} wird dieser aber ab einer frühen Stufe abgebrochen.
+
+# Vergleich der Modelle
+Das Sender-Emfpänger Modell und das Korrelate Modell beziehen sich auf verschiedene Aspekte der Kommunikation.
+
+Shannon und Weaver beschäftigen sich mit der Gesamt Situation während einer Übertragung während sich Peirce mit dem Verhältnis von Sender und Empfänger zu den Nachrichten befasst.
+
+Beide verwenden Begriffe für physikalisch wahrnehmbare Phänomene. Peirce bezeichnet sie als Gegenstände und Shannon und Weaver als Signale
+
+Shannon und Weaver beschreiben den Ablauf einer Übertragung, aber nicht das Verständnis von Nachrichten.
+Peirce hingegen beschäftigt sich ausschlielich mit dem Verständnis und nicht mir Übertragung.
+
