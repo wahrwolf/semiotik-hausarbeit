@@ -1,19 +1,20 @@
 \chapter{Theorie}
-# Level B ist technisch lösbar
-\cite{Shannon:62} schlagen einen "Semantisches Empfangsgerät" vor, der die Nachricht im weiteren Schritt semantisch verarbeitet.
+Wie im voherigen Kaptiel gezeigt, behandeln Shannon&Weaver andere Aspekte der Kommunikation als Peirce.
+Obwohl die Modelle aus sehr unterschiedlichen Forschungsrichtungen kommen, verwenden sie kompatible Begriffe.
+
+Im nächsten Teil werde ich diese Begriffe zusammenführen und die Modelle miteinander kombinieren.
+Hierzu verwende ich das "Sender-Empfänger" mit den beiden Phasen "Kodieren" und "Übertragen" als Grundlage.
+Anschließend erweitere breche ich diese Phasen mithilfe des infitien semitoischen Regresses auf um es in ein drei phasiges "Sender-Kodierer-Empfänger" Modell zu überführen.
 
 Ich stelle im folgenden ein semantischenes Empfangs- beziehungsweise Sendegerät als Kodierer beziehungsweise Dekodierer vor.
 
-Dafür sind die folgenden Schritte notwendig:
-
-- Einführung einer allgemeinen Kodierfunktion
-- Aufteilung des Kodiervorgangs in die semantische Kodierung und die technische Kodierung
-- Definition und Abgrenzung eienr semantischen Störung von einer technischen Störung
-
-Das es gerade im Bereich der Semiotik und Kommunikationstheorie sehr viele verschiedene Definitionen gibt, definiere ich zunächst alle nötigen Grundbegriffe.
-
 # Definitionen
+Da die Semiotik und die technische Informatik teilweise unterschiedliches Vokabular verwenden, definiere ich zunächst ein paar Begriffe.
+Die Erläuterung und Verwendung im Modell folgt nach allen Defintionen.
+
 ## Grundlagen
+Bevor wir über Kommunikation sprechen, müssen wir erst ein paar Begriffe aus der Informationstheorie und Mathematik einführen.
+
 ### Axiom
 Ein Axiom sei eine atomare Aussage die zu einem finiten Zeitpunkt genau einen Wahrheitswert (wahr, falsch, unbekannt) haben kann.
 
@@ -26,6 +27,11 @@ Eine Information sei eine Menge von Aussagen
 ### Axiomsystem
 Ein Axiomssystem sei ein Tupel aus einer Menge Variablen, einer Menge an Axiomen und einer Menge an Operationen zur Verknüpfung der Variablen
 
+
+## Hilfsdefintionen
+Im nächstne Abschnitt definiere ich ein paar Begriffe, die so weder in der Semiotik noch in der Informatik verwendet werden.
+Der Aufbau der Definitonen sind die Grundlage für die folgende Modelldefinition und ermöglichen eine natürlichere Beschreibung des Modells ohne es in seiner Komplexität oder Gültigkeit einzuschränken.
+
 ### Realität
 Eine Realität sein ein Axiomssystem mit folgenden Besonderheiten:
 
@@ -36,6 +42,10 @@ Eine Realität sein ein Axiomssystem mit folgenden Besonderheiten:
 ### Situation
 Eine Situation sei eine endliche Menge von deterministischen Aussagen, deren Wahrheitswerte ausschließlich wahr oder falsch sind.
 Wenn es für jede Aussage einer Situation ein Theorem gibt, dass dieses aus den Axiomen einer Realiät ableitet, so gelte die Situation in Bezug zu der Realiät als möglich.
+
+## Begriffe der Kommunikation
+Der nächste Abschnitt enthält Definitionen für typische Begriffe in der Kommunikation.
+Diese Definitionen basieren auf der eingeführten Terminologie und enthalten alle Bestandteile der Modellbeschreibung.
 
 ### Kommunikationskanal
 Ein Kommunikationskanal oder kurz Kanal sei eine Realität in der mehr als eine Situation möglich sei.
@@ -50,7 +60,9 @@ Wenn ein Sybmol in einem Signal enthalten ist, so gelte es als ausdrückbar durc
 ### Nachricht
 Eine Nachricht sei eine Sequenz von Symbolen
 
-## Modelspezifisch
+## Modelspezifisch Begriffe
+Im letzten Abschnitt benutze ich die eben definierten Begriffe der Kommunikationen um zunächst die Bestandteile des "Sender-Empfänger" Modells mit der eingeführten Terminologie zu beschreiben und anschließend den fehlenden "semantischen Kodierer" zu definieren.
+
 ### technische Kodierung (Transformation)
 Eine technische Kodierung sei ein Paar aus den Funktionen $prepare(s, C): S$ sowie $revise(S): s$ mit $s$ sei ein Symbol, $C$ sei ein Kanal und $S$ sein ein Signal
 Die Transformation sei also der Mechanismus der ein Symbol zu einem übertragbaren Signal vorbereitet und ebenso eine Möglichkeit bietet ein Symbol aus einem Signal zu lesen.
@@ -83,34 +95,36 @@ Eine semantsiche Kodierung oder einfach nur Kodierung sei ein Paar aus den Funkt
 Für alle Kodierungen gelte $encode(decode(M)) = M$
 Wenn $decode(encode(H)) = H$ gilt so sei die Kodierung eindeutig.
 
+# Differenzierung der Kommunikationsphasen
+Mit den obigen Begriffen können wir jetzt die Kommunikation im Modell betrachten.
+Das Modell der Korrelate erlaubt uns hier, die Beziehung der Komponenten in dem Kommunikationsprozess zu beschreiben.
 
-
-# Einführung des Kodierers
+## Betrachtung der Korrelate im Sender-Empfänger Modell
 Die obigen Defintion eines Symbols beziehungsweise eine Signales lassen sich auch nach der triadischen Relation nach Peirce ausdrücken.
-Nach dem Modell von \cite{Shannon:62} würde gelten:
 
-## triadische Relation des Sender-Emfpänger Models
+Nach dem Modell von \cite{Shannon:62} würde gelten:
 - Das Signal entspricht dem Repräsntamen.
 - Das Symbol entspricht dem Objekt
 - Die Nachricht entspricht dem Interpretant
 
-Nach dem infitinen semiotischen Regress gilt damit:
+Nach dem infitinen semiotischen Regress ist der Prozess der Wahrnehmung der Signale aber nocht nicht abgeschlossen.
+Also gilt im nächsten Abstraktionsschritt:
 
 - Das Symbol entspricht dem Repräsntamen.
 - Die Nachricht entspricht dem Objekt
 - Die Information entspricht dem Interpretant
 
-Bis wir im nächsten Schritt an den Abbruch kommen:
+Wenn wir den Regress ein weiteres Mal verwenden kommen wir allerdings an die Grenzen unseres Modells:
 
 - Die Nachricht entspricht dem Repräsntamen.
 - Die Information entspricht dem Objekt
-- Die Information ist durch die Axiomisierung die "ultimate Opinion" nach \cite{Nagl:91}
+- Es gibt keine Interpretanten
 
-Nun können wir die 3 Schritte bennen und bereits bekannten Definitionen zuordnen
+Auch wenn der infinite Regress keinen Abschluss in der Korrelaten Kette findet, so gibt es  nach \cite{Nagl:91} die sogenannte "ultimate opinion".
+Diese beschreibt er als Menge von nicht darstellbaren Aussagen, was sich mit unserer Defintion der Information deckt.
 
 ## Phasen der Kommunikation
-Für die Übertragung und die Transformation passen die Defintionen für Sende- und Empfangsgerät schon.
-Für die Kodierung können wir die Definition aus \autoref{semantische-kodierung-kodierung} heranziehen.
+Wenn wir die Abstraktionsebenen des Regresses als Ebenen oder Phasen der Kommunikation begreifen, können wir diese wie folgt benennen:
 
 - Übertragung
    - Das Signal entspricht dem Repräsntamen.
@@ -128,9 +142,10 @@ Für die Kodierung können wir die Definition aus \autoref{semantische-kodierung
    - Die Information ist durch die Axiomisierung die "ultimate Opinion" nach \cite{Nagl:91}
 
 
-Die so definierten Schritte lassen sich auch als Phasen einer Kommunikation begreifen.
+# Einführung des Sender-Kodierer-Empfänger Modells
+Mithilfe der Definitionen für Sende- und Kodiergeräte sowie der Beschreibung der Kommunikationsphasen können wir das ursprüngliche Sender-Empfänger Modell um den Kodierschritt erweitern
 
-# Ablauf
+## Formale Beschreibung eines Kommunikationsprozesses
 Eine Kommunikation zwischen Sender und Empfänger läuft nach durch folgende Schritte:
 
 1) Der Sender möchte eine Information $H_A$ übertagen.
@@ -143,7 +158,7 @@ Eine Kommunikation zwischen Sender und Empfänger läuft nach durch folgende Sch
 8) Im Dekodierschritt wird mithilfe des Dekodiergeräts die Nachricht zu einer Information $H_B$ umbgewandelt.
 9) Diese Information kann schließlich durch den Emfpäger wahrgenommen werden.
 
-# Erläuterung und Vertiefung des Models
+## Erläuterung und Vertiefung des Models
 In dem bereits vorgestellten Modell von Shannon und Weaver hält der Sender eine Information, die er mithilfe eines Sendegeräts verschicken möchte.
 
 Hierbei wird das Senden in das Kodieren, als Umwandeln der Nachricht in zum Beispiel Morsecode und dann das eigentliche verschicken als physikalische Aktion unterteilt.
