@@ -1,10 +1,7 @@
 \chapter{Analyse}
-# Lösungsvorschlag für das semants
-# Störungen
-Wie in \autoref{ablauf} gezeigt und von \cite{Shannon:62} beschrieben kann auf einem Kanal eine Störung auftreten.
-Diese verändert das empfangene Signal und stört oder verhindert damit die Kommunikation.
-
-Durch die Erweiterung des Models und die Aufteilung in Kodierung, Transformation und Übertragung können wir die Auswirkungen eines Rauschen genauer betrachten.
+# Klassifierung von Störungen
+Mit dem neuen Modell lassen sich jetzt Störungen und Fehler in einem Kommunkationsprozess in verschiedene Klassen einteilen.
+Die Klassifizierung orientiert sich hierbei an den Kommunkationsphasen und Geräten von Sender und Empfänger.
 
 ## Erfolgreiche Kommunikation
 Eine erfolgreiche Kommunkation setzt folgende Punkte voraus:

@@ -40,4 +40,4 @@ In dieser Hausarbeit möchte ich nun d das Sender-Empfänger Model von \cite{Sha
 
 Hierfür stelle ich zunächst beide Modelle vor und vergleiche ihre Grundannahmen.
 Anschließend führe ich die Grundannahmen zusammen und definiere einen semiotischen Kodierer als Erweiterung des Sender-Empfänger Models auf der Grundlage des Korrelate Model.
-Zum Schluss gehe ich kurz auf die daraus ableitbare Differenzierung der semantischen Kommunikationsprobleme als Klassen der semantischen Störungen ein.
+Zum Schluss gehe ich kurz auf die daraus ableitbare Differenzierung der Kommunikationsprobleme als Klassen der Störungen ein.

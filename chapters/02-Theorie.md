@@ -103,6 +103,7 @@ Das Modell der Korrelate erlaubt uns hier, die Beziehung der Komponenten in dem 
 Die obigen Defintion eines Symbols beziehungsweise eine Signales lassen sich auch nach der triadischen Relation nach Peirce ausdrücken.
 
 Nach dem Modell von \cite{Shannon:62} würde gelten:
+
 - Das Signal entspricht dem Repräsntamen.
 - Das Symbol entspricht dem Objekt
 - Die Nachricht entspricht dem Interpretant
@@ -123,24 +124,36 @@ Wenn wir den Regress ein weiteres Mal verwenden kommen wir allerdings an die Gre
 Auch wenn der infinite Regress keinen Abschluss in der Korrelaten Kette findet, so gibt es  nach \cite{Nagl:91} die sogenannte "ultimate opinion".
 Diese beschreibt er als Menge von nicht darstellbaren Aussagen, was sich mit unserer Defintion der Information deckt.
 
-## Phasen der Kommunikation
-Wenn wir die Abstraktionsebenen des Regresses als Ebenen oder Phasen der Kommunikation begreifen, können wir diese wie folgt benennen:
+## Phasen des Empfangens
+Wenn wir die Abstraktionsebenen des Regresses als Ebenen oder Phasen der Wahrnehmung beziehugnsweise des Empfangens beschreiben, können wir sie wie folgt benennen:
 
-- Übertragung
+- Wahrnehmung einer Übertragung
    - Das Signal entspricht dem Repräsntamen.
    - Das Symbol entspricht dem Objekt
    - Die Nachricht entspricht dem Interpretant
 
-- technische Kodierung (Transformation)
+- Lesen von Symbolen
    - Das Symbol entspricht dem Repräsntamen.
    - Die Nachricht entspricht dem Objekt
    - Die Information entspricht dem Interpretant
 
-- semantsiche Kodierung (Kodierung)
+- Verstehen einer Nachricht
    - Die Nachricht entspricht dem Repräsntamen.
    - Die Information entspricht dem Objekt
    - Die Information ist durch die Axiomisierung die "ultimate Opinion" nach \cite{Nagl:91}
 
+## Modellierung des Sendens als inversives Empfangen
+Die oben definierten Phasen des Sendens beschreiben den Extraktionsprozess von Information aus Signalen.
+Unter der Annahme eines symmetrischen Prozesses können wir die Phasen invertieren und kommen so zu sechs Schritten:
+
+1) Formulierung einer Nachricht
+2) Schreiben von Symbolen
+3) Verschicken einer Übertragung
+4) Wahrnehmung einer Übertragung
+5) Lesen von Symbolen
+6) Verstehen einer Nachricht
+
+Die Symmetrie Paare in diesem Prozess können dann als die Kommunikationsphasen Kodierung, Transformation und Übertragung bezeichnet werden.
 
 # Einführung des Sender-Kodierer-Empfänger Modells
 Mithilfe der Definitionen für Sende- und Kodiergeräte sowie der Beschreibung der Kommunikationsphasen können wir das ursprüngliche Sender-Empfänger Modell um den Kodierschritt erweitern
