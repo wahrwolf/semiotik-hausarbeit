@@ -3,10 +3,10 @@ Ich stelle zunächst das Sender-Empfänger Modell aus der Informatik vor und ans
 Bei beiden Modellen gehe ich außerdem kurz auf die aus dem Modell resultierenden Schlussfolgerungen und Fragestellungen ein.
 
 # Shannon-Weaver
-In der Kommunikationstheorie gilt das "Sender-Emfpänger" Modell von  \cite{Shannon:62} als die Grundlage der technischen Kommunikation.
+In der Kommunikationstheorie gilt das "Sender-Empfänger" Modell von  \cite{Shannon:62} als die Grundlage der technischen Kommunikation.
 Es veranschaulicht die grundlegenden Probleme bei der Kommunikation und führt erstmals das Bit als Maßeinheit für Information ein.
 
-## Sender-Emfpänger Modell
+## Sender-Empfänger Modell
 ### Beschreibung des Models
 Die Kommunikation findet stets zwischen zwei Empfängern statt, zwischen denen eine Nachricht übertragen wird.
 Dieser Vorgang kann dann beliebig oft wiederholt werden.
@@ -17,12 +17,12 @@ Zwischen dem Sender und dem Empfänger liegt ein sogenannter Kommunikationskanal
 Das Sende- und das Empfangsgerät sind mit dem Kanal verbunden.
 
 #### Ablauf einer Kommunikation
-Wie in Abbildung \TODO{Bild einfügen} dargestellt modellieren \cite{Shannon:62} Kommunkation wie folgt:
+Wie in Abbildung \TODO{Bild einfügen} dargestellt modellieren \cite{Shannon:62} Kommunikation wie folgt:
 
 1) Ein Sender (Information Source) wählt eine Nachricht aus einer Menge von möglichen Nachrichten aus.
 2) Die Nachricht wird mit dem Sendegerät (Transmitter) an den Kanal geschickt
 3) Auf dem Kanal verändert ein Rauschen die Nachricht
-4) Das Signal und das Rauschen werden mit dem Empfangsgerät als Nachricht emfpangen
+4) Das Signal und das Rauschen werden mit dem Empfangsgerät als Nachricht empfangen
 5) Der Empfänger verarbeitet die Nachricht weiter
 
 #### Auftreten einer Störung
