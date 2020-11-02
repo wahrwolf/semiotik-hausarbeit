@@ -14,7 +14,7 @@ Die Erläuterung und Verwendung im Modell folgt nach Darstellung der Definitione
 
 ## Grundlagen
 Bevor wir über Kommunikation sprechen, müssen wir erst ein paar Begriffe aus der Informationstheorie und Mathematik einführen.
-Diese Definitionen sind angelehtn an \cite{Cormen:09}
+Diese Definitionen sind angelehtn an \citet{Cormen:09}
 
 ### Axiom
 Ein Axiom sei eine atomare Aussage die zu einem finiten Zeitpunkt genau einen Wahrheitswert (wahr, falsch, unbekannt) haben kann.
@@ -107,7 +107,7 @@ Das Modell der Korrelate erlaubt hier, die Beziehung der Komponenten in dem Komm
 ## Betrachtung der Korrelate im Sender-Empfänger Modell
 Die obige Definition eines Symbols beziehungsweise eine Signales lässt sich auch nach der triadischen Relation von Peirce ausdrücken.
 
-Nach dem Modell von \cite{Shannon:62} würde gelten:
+Nach dem Modell von \citet{Shannon:62} würde gelten:
 
 - Das Signal entspricht dem Repräsentamen.
 - Das Symbol entspricht dem Objekt
@@ -126,8 +126,8 @@ Wird der Regress ein weiteres Mal angewendet, stößt er  an die Grenzen des Mod
 - Die Information entspricht dem Objekt
 - Es gibt keine Interpretant
 
-Auch wenn der infinite Regress keinen Abschluss in der Korrelaten Kette findet, so gibt es  nach \cite{Nagl:91} die sogenannte "ultimate opinion".
-\cite{Nagl:91} beschreibt die "ultimate opinion" als Menge von nicht darstellbaren Aussagen, was sich mit der obigen Definition der Information deckt.
+Auch wenn der infinite Regress keinen Abschluss in der Korrelaten Kette findet, so gibt es  nach \citet{Nagl:91} die sogenannte "ultimate opinion".
+\citet{Nagl:91} beschreibt die "ultimate opinion" als Menge von nicht darstellbaren Aussagen, was sich mit der obigen Definition der Information deckt.
 
 ## Phasen des Empfangens
 Nimmt man die Abstraktionsebenen des Regresses als Ebenen oder Phasen der Wahrnehmung beziehungsweise des Empfangens, können sie wie folgt benannt werden:
@@ -145,7 +145,7 @@ Nimmt man die Abstraktionsebenen des Regresses als Ebenen oder Phasen der Wahrne
 - Verstehen einer Nachricht
    - Die Nachricht entspricht dem Repräsentamen.
    - Die Information entspricht dem Objekt
-   - Die Information ist durch die Axiomatisierung die "ultimate Opinion" nach \cite{Nagl:91}
+   - Die Information ist durch die Axiomatisierung die "ultimate Opinion" nach \citet{Nagl:91}
 
 ## Modellierung des Sendens als inversives Empfangen
 Die oben definierten Phasen des Sendens beschreiben den Extraktionsprozess von Information aus Signalen.

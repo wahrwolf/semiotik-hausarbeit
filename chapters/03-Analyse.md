@@ -25,8 +25,8 @@ Dies beinhaltet:
 - eine falsche Kanalbreite (eine Nachricht wird sowohl visuell, als auch akustisch übertragen, aber der Empfänger wertet nur den akustischen Teil aus)
 
 Übertagungsstörungen können nur vom Sender durch ein erneutes Übermitteln des Signals behoben werden.
-Im Transformationsschritt kann die Verwendung von Prüfsummen \cite{tomasi93} die Erkennung und Behebung von Übertragungsstörungen ermöglichen.
-In Protokollen wie TCP \cite{Stevens:93} werden Kommunikationsprozesse verschachtelt um Übertragungsstörungen zu reduzieren.
+Im Transformationsschritt kann die Verwendung von Prüfsummen \citet{tomasi93} die Erkennung und Behebung von Übertragungsstörungen ermöglichen.
+In Protokollen wie TCP \citet{Stevens:93} werden Kommunikationsprozesse verschachtelt um Übertragungsstörungen zu reduzieren.
 
 ## Tranformationsstörung
 Bei dieser Art von Störung funktioniert zwar die Übertragung der Signale, aber die Sende- und Empfangsgeräte benutzen nicht die gleichen Symbolen und die Transformation schlägt fehl.
@@ -36,7 +36,7 @@ Im Gegensatz zum Kodiergerät kann die Transformation für einen Kanal allerding
 Mit dieser Aussage lässt sich die Abgrenzung klarer definieren: Wenn die Störung behoben werden kann ohne das sich der Kanal verändern muss, handelt es sich um eine semantische Störung.
 Wenn also der Sender einfach die Sprache wechseln kann oder eine andere Formulierung verwendet handelt es sich um eine semantische Störung.
 Wenn der Sender zusätzlich zu seinen Worten auch noch seine Körpersprache einsetzten muss um die Störung zu beheben, handelt es sich um eine Transformationsstörung.
-Transformationsstörungen sind sehr schwer zu erkennen und zu beheben. Die Verwendung eines phonetischen Alphabets \cite{international99} oder öhnlichem kann hier helfen.
+Transformationsstörungen sind sehr schwer zu erkennen und zu beheben. Die Verwendung eines phonetischen Alphabets \citet{international99} oder öhnlichem kann hier helfen.
 
 ## semantische Störung
 Bei einer semantischen Störung sind das Kodier- und Dekodiergerät nicht kompatibel.
@@ -45,7 +45,7 @@ In einem Beispiel wurden zwar alle Worte gehört, aber die Kommunikationspartner
 Eine semantische Störung kann sowohl durch den Sender erkannt und durch Wechsel des Dekodiergerätes behoben werden.
 Um im Beispiel zu bleiben kann, der Empfänger versuchen die Nachricht in verschiedenen Sprachen (formal korrekt mit verschiedenen Kodiergeräten) zu verstehen.
 Da eine Kommunikation in der Regel ein Nachrichtenaustausch und somit Interaktion auslösen kann, könnte der Sender Abweichungen von dem erwarteten Verhalten beobachten.
-Die Informatik und insbesondere die Kommunikationstechnik bieten hier verschiedene Algorithmen wie Hashing und Handshakes an \cite{krawczyk97}.
+Die Informatik und insbesondere die Kommunikationstechnik bieten hier verschiedene Algorithmen wie Hashing und Handshakes an \citet{krawczyk97}.
 
 # Bedeutung des neuen Modells
 Mit dem neuen Modell und der Aufschlüsselung der Störungsklassen können bereits etablierte Modelle neu evaluiert.
@@ -56,6 +56,6 @@ Dies schafft erstmal eine Vergleichbarkeit von Modellen aus technischen und sozi
 Grundsätzlich können alle bestehenden Modelle und Algorithmen betrachtet werden.
 Für besonders interessant halte ich Ansätze und Modelle aus der Psychologie und der Pädagogik.
 
-- "Vier Seiten"-Modell von \cite{Thun:13} zur Untersuchung der Seiteneffekte bei einer Übertragung
-- "Gesprächsblockierer" nach \cite{Gordon:12} als Analyse von Transformationsfehlern.
-- "Dreikomponenten"-Modell nach \cite{Rosenberg:60} um die Einstellung als Teil der Übertragungsgeräte zu analysieren und praktische Kommunikationsstrategien zu entwickeln
+- "Vier Seiten"-Modell von \citet{Thun:13} zur Untersuchung der Seiteneffekte bei einer Übertragung
+- "Gesprächsblockierer" nach \citet{Gordon:12} als Analyse von Transformationsfehlern.
+- "Dreikomponenten"-Modell nach \citet{Rosenberg:60} um die Einstellung als Teil der Übertragungsgeräte zu analysieren und praktische Kommunikationsstrategien zu entwickeln
